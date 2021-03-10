@@ -43,6 +43,6 @@ phpunit.phar
 
 # Data directories
 /mysql/data
-/redis/data
+/redis/data/*
 
 .env
