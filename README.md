@@ -80,13 +80,13 @@ Access to Console App: `docker-compose exec php bash` and `php yii mycommand/act
 ```
 php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 php yii migrate --migrationPath=@yii/log/migrations/
-php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/
+# php yii migrate --migrationPath=vendor/ignatenkovnikita/yii2-queuemanager/migrations/ # Needed only for DB based Queue
 php yii migrate/up
 ```
 
 ### Default User Credentials
 
-login: `adminus`
+login: `admin`
 password: `adminus`
 
 ### Web server config
