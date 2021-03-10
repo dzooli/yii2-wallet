@@ -46,7 +46,7 @@ services:
   redis:
     image: redis:latest
     volumes:
-      - ./redis/data:/data
+      - ./redis:/data
 #  db:
 #    image: postgres:13-alpine
 #    environment:
