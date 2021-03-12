@@ -22,11 +22,11 @@ class m210312_213418_create_transaction_table extends Migration
             'id' => $this->primaryKey(),
             'account_id' => $this->integer()->notNull(),
             'category_id' => $this->integer()->notNull(),
-            'target_id' => $this->notNull(),
-            'create_time' => $this->timestamp(),
-            'update_time' => $this->timestamp(),
+            'target_id' => $this->integer()->notNull(),
+            'create_time' => $this->timestamp(6)->defaultValue('1970-01-01 00:00:01'),
+            'update_time' => $this->timestamp(6)->defaultValue('1970-01-01 00:00:01'),
             'value' => $this->money(),
-            'currency_id' => $this->notNull(),
+            'currency_id' => $this->integer()->notNull(),
         ]);
         $this->addCommentOnColumn('{{%transaction}}', 'target_id', 'Target Account');
         $this->addCommentOnColumn('{{%transaction}}', 'currency_id', 'Transaction Currency');
