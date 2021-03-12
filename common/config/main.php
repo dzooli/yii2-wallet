@@ -78,17 +78,17 @@ return [
             'channel' => 'default', // Queue channel key
             'mutex' => \yii\mutex\MysqlMutex::class, // Mutex used to sync queries
             'as log' => \yii\queue\LogBehavior::class,
-            'as quuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
+            'as qeuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
             // Other driver options
         ],
-        */
+*/
+
         'queue' => [
             'class' => \yii\queue\redis\Queue::class,
-            'redis' => 'redis',
-            'channel' => 'wallet-queue',
             'as log' => \yii\queue\LogBehavior::class,
             'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
         ],
+
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
@@ -100,6 +100,12 @@ return [
         ],
     ],
     'modules' => [
+        'queuemanager' => [
+            'class' => \ignatenkovnikita\queuemanager\QueueManager::class,
+        ],
+        'gridView' => [
+            'class' => \kartik\grid\Module::class,
+        ],
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => false,
