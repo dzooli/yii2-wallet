@@ -11,7 +11,7 @@ use yii\db\Migration;
  * - `{{%icon}}`
  * - `{{%color}}`
  */
-class m210312_212801_create_account_table extends Migration
+class m210312_213330_create_account_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -22,8 +22,8 @@ class m210312_212801_create_account_table extends Migration
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
             'account_type_id' => $this->integer()->notNull(),
-            'icon_id' => $this->notNull(),
-            'color_id' => $this->notNull(),
+            'icon_id' => $this->integer()->notNull(),
+            'color_id' => $this->integer()->notNull(),
             'balance' => $this->money()->notNull(),
             'default_currency' => $this->integer()->notNull()
         ]);
@@ -104,13 +104,13 @@ class m210312_212801_create_account_table extends Migration
         $this->createIndex(
             '{{%idx-account-currency_id}}',
             '{{%account}}',
-            'currency_id'
+            'default_currency'
         );
 
         $this->addForeignKey(
             '{{%fk-account-currency_id}}',
             '{{%account}}',
-            'currency_id',
+            'default_currency',
             '{{%currency}}',
             'id',
             'CASCADE',
