@@ -7,8 +7,8 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'yii2-frontend',
-    'name' => 'App Frontend',
+    'id' => 'wallet-frontend',
+    'name' => 'My Wallet',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -23,7 +23,7 @@ return [
         ],*/
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            'name' => 'mywallet-frontend',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
