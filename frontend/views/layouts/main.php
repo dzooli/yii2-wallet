@@ -9,10 +9,14 @@ use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use diecoding\toastr\ToastrFlash;
+use raoul2000\bootswatch4\BootswatchAsset;
 
+BootswatchAsset::$theme = 'darkly';
 AppAsset::register($this);
 
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -31,11 +35,12 @@ AppAsset::register($this);
 
     <div class="wrap">
         <?php
+
         NavBar::begin([
             'brandLabel' => Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+                'class' => 'navbar navbar-expand-md navbar-dark bg-primary fixed-top',
             ],
         ]);
         $menuItems = [
@@ -69,13 +74,13 @@ AppAsset::register($this);
                 'activeItemTemplate' => "\t<li class=\"breadcrumb-item active\">{link}</li>\n", // template for the active link
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= Alert::widget() ?>
+            <?= ToastrFlash::widget(['positionClass' => ToastrFlash::POSITION_BOTTOM_RIGHT]) ?>
             <?= $content ?>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
+    <footer class="footer bg-secondary">
+        <div class="container bg-secondary">
             <p class="pull-left">Zoltán Fábián &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
             <p class="pull-right"><?= Yii::powered() ?></p>
