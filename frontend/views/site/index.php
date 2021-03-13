@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use kartik\tabs\TabsX;
+use kartik\helpers\Html;
 
 $this->title = 'My Yii Application';
 
@@ -25,16 +26,21 @@ $tabItems = [
         'active' => false,
     ],
 ];
+
+$secondaryHeader = Html::bsLabel('As your daily routine', 'warning', [
+    'class' => 'text-nowrap',
+    'style' => 'font-weight: lighter; font-size: small;',
+]);
 ?>
 
 <div class="site-index">
     <div class="body-content">
+        <?= Html::pageHeader('Daily Cash-flow', $secondaryHeader); ?>
         <div class="row mb-2">
             <div class="col-md-12">
                 <?= TabsX::widget(
                     [
                         'items' => $tabItems,
-                        'align' => TabsX::ALIGN_LEFT,
                         'encodeLabels' => false,
                         'bordered' => true,
                         'height' => TabsX::SIZE_SMALL,
