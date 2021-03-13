@@ -39,7 +39,8 @@
         "kartik-v/yii2-tabs-x": "^1.2",
         "raoul2000/yii2-bootswatch4-asset": "^4.3",
         "slavkovrn/yii2-lightbox": "^1.0",
-        "diecoding/yii2-toastr": "^1.0"
+        "diecoding/yii2-toastr": "^1.0",
+        "imanilchaudhari/yii2-currency-converter": "^1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
