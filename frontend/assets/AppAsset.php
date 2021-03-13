@@ -20,5 +20,6 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'kartik\icons\FontAwesomeAsset',
         'yii\bootstrap4\BootstrapAsset',
+        'raoul2000\bootswatch4\BootswatchAsset',
     ];
 }
