@@ -34,7 +34,7 @@ $tabItems = [
                 <?= TabsX::widget(
                     [
                         'items' => $tabItems,
-                        'align' => TabsX::ALIGN_CENTER,
+                        'align' => TabsX::ALIGN_LEFT,
                         'encodeLabels' => false,
                         'bordered' => true,
                         'height' => TabsX::SIZE_SMALL,
