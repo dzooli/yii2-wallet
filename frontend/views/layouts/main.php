@@ -12,7 +12,7 @@ use common\widgets\Alert;
 use diecoding\toastr\ToastrFlash;
 use raoul2000\bootswatch4\BootswatchAsset;
 
-BootswatchAsset::$theme = 'darkly';
+BootswatchAsset::$theme = 'materia';
 AppAsset::register($this);
 
 ?>
@@ -45,7 +45,8 @@ AppAsset::register($this);
         ]);
         $menuItems = [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Transactions', 'url' => ['/transaction/index']],
+            ['label' => 'About', 'url' => ['site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
         ];
         if (Yii::$app->user->isGuest) {
@@ -56,7 +57,7 @@ AppAsset::register($this);
                 . Html::beginForm(['/user/logout'], 'post')
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-outline-success']
+                    ['class' => 'btn btn-primary btn-md']
                 )
                 . Html::endForm()
                 . '</li>';
@@ -74,7 +75,7 @@ AppAsset::register($this);
                 'activeItemTemplate' => "\t<li class=\"breadcrumb-item active\">{link}</li>\n", // template for the active link
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= ToastrFlash::widget(['positionClass' => ToastrFlash::POSITION_BOTTOM_RIGHT]) ?>
+            <?= ToastrFlash::widget(['positionClass' => ToastrFlash::POSITION_TOP_FULL_WIDTH]) ?>
             <?= $content ?>
         </div>
     </div>
