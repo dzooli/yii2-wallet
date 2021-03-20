@@ -1,0 +1,41 @@
+{
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "dzooli"
+      },
+      "category": "essential",
+      "creation_time": "2021-03-20T00:24:02.523Z",
+      "description": {
+        "content": "3 Transaction model is needed for the page on the different transaction kind tabs",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "prio": 1,
+      "references": [],
+      "title": "Create 3 models for the site/index page"
+    },
+    {
+      "assignedTo": {
+        "name": "dzooli"
+      },
+      "category": "essential",
+      "creation_time": "2021-03-20T00:26:19.503Z",
+      "description": {
+        "content": "Check and create the missing default acounts upon login",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "## Account types needed\n\n- Outside\n- Credit\n- Cash",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "prio": 1,
+      "references": [],
+      "title": "Default Accounts upon login"
+    }
+  ],
+  "in-progress": [],
+  "testing": [],
+  "done": []
+}
