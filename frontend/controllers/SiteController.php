@@ -6,6 +6,9 @@ use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
+use common\models\Transaction;
+use frontend\models\TransactionSearch;
+use yii\filters\AccessControl;
 
 use frontend\models\ContactForm;
 
@@ -14,6 +17,31 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller
 {
+
+    public function behaviors()
+    {
+        return [
+            // 'access' => [
+            //     'class' => AccessControl::class,
+            //     'only' => ['index', 'create', 'update', 'delete', 'view'],
+            //     'rules' => [
+            //         [
+            //             'allow' => false,
+            //             'actions' => ['index', 'create', 'update', 'delete', 'view'],
+            //             'roles' => ['?'],
+            //         ],
+            //         [
+            //             'allow' => true,
+            //             'actions' => ['index', 'create', 'update', 'delete', 'view'],
+            //             'roles' => ['@'],
+            //         ]
+            //     ],
+            //     'denyCallback' => function ($rule, $action) {
+            //         return $this->redirect(['user/login', 'redirectTo' => $action->controller->id . '/index']);
+            //     }
+            // ],
+        ];
+    }
 
     /**
      * {@inheritdoc}
@@ -38,7 +66,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $transactionSearchModel = new TransactionSearch;
+        $transactionDataProvider = $transactionSearchModel->search(Yii::$app->request->getQueryParams());
+
+        return $this->render('index', [
+            'trSearchModel' => $transactionSearchModel,
+            'trDataProvider' => $transactionDataProvider
+        ]);
     }
 
     /**
