@@ -1,6 +1,8 @@
 # Personal expense tracker
 
-# Yii2 Fast Simple Advanced App [![Packagist Version](https://img.shields.io/packagist/v/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app) [![Total Downloads](https://img.shields.io/packagist/dt/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app)
+This projec uses the following Yii2 Advanced template: 
+
+Yii2 Fast Simple Advanced App [![Packagist Version](https://img.shields.io/packagist/v/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app) [![Total Downloads](https://img.shields.io/packagist/dt/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app)
 
 Yii2-app is Fast and Ready-to-production advanced project template.
 
