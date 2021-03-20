@@ -21,9 +21,8 @@ class m210312_230534_rename_transaction_timestamps extends Migration
      */
     public function safeDown()
     {
-        echo "m210312_230534_rename_transaction_timestamps cannot be reverted.\n";
-
-        return false;
+        $this->renameColumn('{{%transaction}}', 'created_at', 'create_time');
+        $this->renameColumn('{{%transaction}}', 'updated_at', 'update_time');
     }
 
     /*

@@ -3,13 +3,12 @@
 use yii\db\Migration;
 
 /**
- * Class m210312_215224_insert_account_types
+ * Class m210318_123504_insert_outside_account_type
  */
-class m210312_215224_insert_account_types extends Migration
+class m210318_123504_insert_outside_account_type extends Migration
 {
     /**
      * {@inheritdoc}
-     * ENUM('Credit', 'Debit', 'Cash', 'Asset', 'Resource', 'Loan', 'Outside')
      */
     public function safeUp()
     {
@@ -17,12 +16,7 @@ class m210312_215224_insert_account_types extends Migration
             'account_type',
             ['name'],
             [
-                ['Credit'],
-                ['Debit'],
-                ['Cash'],
-                ['Asset'],
-                ['Loan'],
-                ['Resource']
+                ['Outside'],
             ]
         );
 
@@ -34,7 +28,7 @@ class m210312_215224_insert_account_types extends Migration
      */
     public function safeDown()
     {
-        $this->delete('account_type', ['not', ['id' => 0]]);
+        $this->delete('account_type', ['name' => 'Outside']);
 
         return true;
     }
@@ -48,7 +42,7 @@ class m210312_215224_insert_account_types extends Migration
 
     public function down()
     {
-        echo "m210312_215224_insert_account_types cannot be reverted.\n";
+        echo "m210318_123504_insert_outside_account_type cannot be reverted.\n";
 
         return false;
     }
