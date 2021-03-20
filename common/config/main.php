@@ -103,8 +103,19 @@ return [
         'queuemanager' => [
             'class' => \ignatenkovnikita\queuemanager\QueueManager::class,
         ],
-        'gridView' => [
+        'gridview' => [
             'class' => \kartik\grid\Module::class,
+            'bsVersion' => '4.x',
+        ],
+        'datecontrol' => [
+            'class' => \kartik\datecontrol\Module::class,
+            'displaySettings' => [
+                'datetime' => 'yy-MM-dd HH:mm',
+            ],
+            'saveSettings' => [
+                'datetime' => 'yyyy-MM-dd HH:mm:ss',
+            ],
+            'autoWidget' => true,
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
@@ -114,6 +125,36 @@ return [
             'admins' => ['admin'],
             'modelMap' => [
                 'User' => 'common\models\User',
+                'Account' => 'common\models\Account',
+            ],
+            'controllerMap' => [
+                'security' => [
+                    'class' => \dektrium\user\controllers\SecurityController::class,
+                    'on ' . \dektrium\user\controllers\SecurityController::EVENT_BEFORE_LOGIN => function ($e) {
+                        $redirTo = Yii::$app->request->get('redirectTo') ?? '';
+                        if ($redirTo !== '') {
+                            Yii::$app->session->set('redirectTo', $redirTo);
+                        }
+                    },
+                    'on ' . \dektrium\user\controllers\SecurityController::EVENT_AFTER_LOGIN => function ($e) {
+                        if (!Yii::$app->user->identity->checkDefaultAccounts()) {
+                            try {
+                                Yii::$app->user->identity->createDefaultAccounts();
+                            } catch (Exception $ex) {
+                                Yii::$app->user->logout();
+                                Yii::$app->session->remove('redirectTo');
+                                Yii::$app->session->setFlash('error', 'Fatal error! Cannot create default accounts: ' . $ex->getMessage());
+                                Yii::$app->response->redirect(['site/index'])->send();
+                            }
+                        }
+
+                        if (Yii::$app->session->has('redirectTo')) {
+                            $redirTo =  Yii::$app->session->get('redirectTo') ?? '';
+                            Yii::$app->session->remove('redirectTo');
+                            Yii::$app->response->redirect([$redirTo])->send();
+                        }
+                    }
+                ],
             ],
         ],
     ],
