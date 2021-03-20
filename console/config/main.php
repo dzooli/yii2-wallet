@@ -10,6 +10,7 @@ return [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'queue'],
+    //'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -19,17 +20,22 @@ return [
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
         'migrate' => [
             'class' => 'yii\console\controllers\MigrateController',
             //'migrationPath' => null,
             'migrationNamespaces' => [
-                //'console\migrations',
+                'console\migrations',
                 'yii\queue\db\migrations',
             ],
         ],
     ],
     'components' => [
+        'queue' => [
+            'class' => yii\queue\redis\Queue::class,
+            'as log' => \yii\queue\LogBehavior::class,
+            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
+        ],
     ],
     'params' => $params,
 ];
