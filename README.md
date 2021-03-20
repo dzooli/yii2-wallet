@@ -1,21 +1,13 @@
-á$¨lpöko# Personal expense tracker
-~~9z6~~
-This projec uses the following Yii2 Advanced template:
+# Personal expense tracker
+
+This project uses the following Yii2 Advanced template:
 
 Yii2 Fast Simple Advanced App [![Packagist Version](https://img.shields.io/packagist/v/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app) [![Total Downloads](https://img.shields.io/packagist/dt/akiraz2/yii2-app.svg?style=flat-square)](https://packagist.org/packages/akiraz2/yii2-app)
 
-Yii2-app is Fast and Ready-to-production advanced project template.
+## Development features
 
-Dockerized, for development (mysql, nginx, php-fpm)
-
-Please, [enable php intl extension](http://php.net/manual/en/intl.installation.php) for better work.
-
-Default, the template includes three tiers: `frontend`, `backend`, and `console`, each of which is a separate Yii application.
-
-> **NOTE:** Template is in initial development. Anything may change at any time.
-
-## Features
-
+- Yii2-app is Fast and Ready-to-production advanced project template
+- Dockerized, for development (mysql, nginx, php-fpm)
 - Gentelella Admin template is beautiful and simple bootstrap, compatible with yii2 assets: [yiister/yii2-gentelella](https://github.com/yiister/yii2-gentelella), [Demo](https://colorlib.com/polygon/gentelella/)
 - Yii2 User is strong and proved user-module with many features: [dektrium/yii2-user](https://github.com/dektrium/yii2-user) (login `admin`, password `adminus`)
 - Frontend and Backend User Controllers are filtered (by `dektrium/yii2-user`)
