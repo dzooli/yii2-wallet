@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -31,8 +32,17 @@ return [
         ],
     ],
     'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            //            'dsn' => 'pgsql:host=db;dbname=yii2advanced',
+            'dsn' => 'mysql:host=db;dbname=yii2advanced',
+            'username' => 'username',
+            'password' => 'password',
+            'charset' => 'utf8',
+        ],
+
         'queue' => [
-            'class' => yii\queue\redis\Queue::class,
+            'class' => \yii\queue\file\Queue::class,
             'as log' => \yii\queue\LogBehavior::class,
             'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
         ],

@@ -25,6 +25,7 @@ services:
     environment:
       - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
       - PHP_ENABLE_XDEBUG=1
+      - XDEBUG_IDEKEY=VSCODE
       - TEST_RUNTIME_PATH=/tmp/runtime
     volumes:
       - ./:/app:delegated
@@ -45,7 +46,8 @@ services:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
-      - "8106:3306"
+      - "3306:3306"
+  #      - "8106:3306"
   redis:
     restart: always
     image: redis:latest

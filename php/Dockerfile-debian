@@ -34,15 +34,14 @@ RUN apt-get update && \
             unzip \
             libcurl4-openssl-dev \
             libssl-dev \
+            libonig-dev \
+            libonig5 \
         --no-install-recommends && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install PHP extensions required for Yii 2.0 Framework
-RUN docker-php-ext-configure gd \
-        --with-freetype-dir=/usr/include/ \
-        --with-png-dir=/usr/include/ \
-        --with-jpeg-dir=/usr/include/ && \
+RUN docker-php-ext-configure gd && \
     docker-php-ext-configure bcmath && \
     docker-php-ext-install \
         soap \
@@ -71,7 +70,7 @@ RUN printf "\n" | pecl install \
 RUN cd /tmp && \
     git clone git://github.com/xdebug/xdebug.git && \
     cd xdebug && \
-    git checkout 2.7.2 && \
+    git checkout 2.9.8 && \
     phpize && \
     ./configure --enable-xdebug && \
     make && \
