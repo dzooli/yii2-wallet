@@ -66,6 +66,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+        $myJob = new \frontend\models\DownloadJob();
+        Yii::$app->queue->push($myJob);
+        Yii::info('Job has been queued', $category = 'wallet');
+
         $transactionSearchModel = new TransactionSearch;
         $transactionDataProvider = $transactionSearchModel->search(Yii::$app->request->getQueryParams());
 
