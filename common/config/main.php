@@ -9,6 +9,15 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=db;dbname=yii2advanced',
+            'username' => 'username',
+            'password' => 'password',
+            'charset' => 'utf8',
+        ],
+
         'formatter' => [
             'class' => 'yii\i18n\Formatter',
             'nullDisplay' => '-',
@@ -23,7 +32,7 @@ return [
             ]
         ],
         'cache' => [
-            //            'class' => yii\caching\FileCache::class,
+            //'class' => yii\caching\FileCache::class,
             //'class' => yii\caching\DbCache::class,
             //'cacheTable' => '{{%cache}}',
             'class' => \yii\redis\Cache::class,
@@ -39,6 +48,14 @@ return [
                 [
                     'class' => 'yii\log\DbTarget',
                     'levels' => ['error', 'warning'],
+                    'except' => ['wallet*']
+                ],
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'categories' => ['wallet*', 'application*',],
+                    'except' => ['application*',],
+                    'logTable' => '{{%log_info}}',
+                    'levels' => ['info', 'warning', 'error'],
                 ],
             ],
         ],
@@ -64,13 +81,12 @@ return [
                 ],
             ],
         ],
-        /*         
-        'queue' => [
-            'class' => \yii\queue\sync\Queue::class,
-            'handle' => false, // whether tasks should be executed immediately
+        'redis' => [
+            'class' => yii\redis\Connection::class,
+            'hostname' => 'redis',
+            'database' => 0,
+            'retries' => 2,
         ],
-        */
-        /*
         'queue' => [
             'class' => \yii\queue\db\Queue::class,
             'db' => 'db', // DB connection component or its config
@@ -81,22 +97,30 @@ return [
             'as qeuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
             // Other driver options
         ],
-*/
-
+        /*
+        'queue' => [
+            'class' => \yii\queue\file\Queue::class,
+            'as log' => \yii\queue\LogBehavior::class,
+            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
+        ],
+        */
+        /* 
         'queue' => [
             'class' => \yii\queue\redis\Queue::class,
             'as log' => \yii\queue\LogBehavior::class,
             'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
         ],
+ */
+        /*         
+        'queue' => [
+            'class' => \yii\queue\sync\Queue::class,
+            'handle' => false, // whether tasks should be executed immediately
+        ],
+
+*/
 
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
-        ],
-        'redis' => [
-            'class' => yii\redis\Connection::class,
-            'hostname' => 'redis',
-            'database' => 0,
-            'retries' => 2,
         ],
     ],
     'modules' => [

@@ -7,7 +7,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-return [
+$consoleConfig = [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'queue'],
@@ -31,21 +31,9 @@ return [
             ],
         ],
     ],
-    'components' => [
-        'db' => [
-            'class' => 'yii\db\Connection',
-            //            'dsn' => 'pgsql:host=db;dbname=yii2advanced',
-            'dsn' => 'mysql:host=db;dbname=yii2advanced',
-            'username' => 'username',
-            'password' => 'password',
-            'charset' => 'utf8',
-        ],
-
-        'queue' => [
-            'class' => \yii\queue\file\Queue::class,
-            'as log' => \yii\queue\LogBehavior::class,
-            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
-        ],
-    ],
     'params' => $params,
 ];
+
+$commonConfig = require __DIR__ . '/../../common/config/main.php';
+$finalConfig = array_merge($consoleConfig, $commonConfig);
+return $finalConfig;

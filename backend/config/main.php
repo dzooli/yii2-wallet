@@ -6,7 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-return [
+$backendConfig = [
     'id' => 'yii2-backend',
     'name' => 'App Backend',
     'basePath' => dirname(__DIR__),
@@ -48,11 +48,9 @@ return [
             'showScriptName' => false,
             'rules' => [],
         ],
-        'queue' => [
-            'class' => \yii\queue\redis\Queue::class,
-            'as log' => \yii\queue\LogBehavior::class,
-            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
-        ],
     ],
     'params' => $params,
 ];
+
+$commonConfig = require __DIR__ . '/../../common/config/main.php';
+return array_merge($commonConfig, $backendConfig);
