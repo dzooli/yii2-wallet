@@ -19,17 +19,33 @@ use dektrium\user\models\User as BaseUser;
  */
 class User extends BaseUser
 {
+    /**
+     * Retrieves the existing account names
+     *
+     * @return array The user's existing account names
+     */
     public function getAccountTypes()
     {
         return ArrayHelper::getColumn($this->accounts, 'name', false);
     }
 
+    /**
+     * Checks the default accounts existence (cash and outside is required for everybody)
+     *
+     * @return boolean
+     */
     public function checkDefaultAccounts(): bool
     {
         $accTypes = $this->getAccountTypes();
         return (in_array('Outside', $accTypes)) && in_array('Cash', $accTypes);
     }
 
+    /**
+     * Creates the default accounts for the user
+     *
+     * @return void
+     * @throws AccountCreationErrorException
+     */
     public function createDefaultAccounts()
     {
         $accounts = [];
@@ -57,6 +73,11 @@ class User extends BaseUser
         $this->refresh();
     }
 
+    /**
+     * Defines the relation between the user and the accounts (Yii2 way)
+     *
+     * @return void
+     */
     public function getAccounts()
     {
         return $this->hasMany($this->module->modelMap['Account'], ['user_id' => 'id'])->all();
