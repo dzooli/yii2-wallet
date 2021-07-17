@@ -11,6 +11,13 @@ use yii\helpers\ArrayHelper;
  */
 class AccountType extends BaseAccountType
 {
+    const TYPE_CREDIT = 1;
+    const TYPE_DEBIT = 2;
+    const TYPE_CASH = 3;
+    const TYPE_ASSET = 4;
+    const TYPE_LOAN = 5;
+    const TYPE_RESOURCE = 6;
+    const TYPE_OUTSIDE = 7;
 
     public function behaviors()
     {

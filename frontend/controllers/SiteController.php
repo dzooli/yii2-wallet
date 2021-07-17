@@ -21,25 +21,30 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            // 'access' => [
-            //     'class' => AccessControl::class,
-            //     'only' => ['index', 'create', 'update', 'delete', 'view'],
-            //     'rules' => [
-            //         [
-            //             'allow' => false,
-            //             'actions' => ['index', 'create', 'update', 'delete', 'view'],
-            //             'roles' => ['?'],
-            //         ],
-            //         [
-            //             'allow' => true,
-            //             'actions' => ['index', 'create', 'update', 'delete', 'view'],
-            //             'roles' => ['@'],
-            //         ]
-            //     ],
-            //     'denyCallback' => function ($rule, $action) {
-            //         return $this->redirect(['user/login', 'redirectTo' => $action->controller->id . '/index']);
-            //     }
-            // ],
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['index', 'contact', 'about',],
+                'rules' => [
+                    [
+                        'allow' => false,
+                        'actions' => ['index',],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['contact', 'about',],
+                        'roles' => ['?']
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index',],
+                        'roles' => ['@'],
+                    ],
+                ],
+                'denyCallback' => function ($rule, $action) {
+                    return $this->redirect(['user/login', 'redirectTo' => $action->controller->id . '/index']);
+                }
+            ],
         ];
     }
 
@@ -66,11 +71,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-        $myJob = new \frontend\models\DownloadJob();
-        Yii::$app->queue->push($myJob);
-        Yii::info('Job has been queued', $category = 'wallet');
-
         $transactionSearchModel = new TransactionSearch;
         $transactionDataProvider = $transactionSearchModel->search(Yii::$app->request->getQueryParams());
 

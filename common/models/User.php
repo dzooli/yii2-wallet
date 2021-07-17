@@ -3,9 +3,10 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
-use common\models\AccountType;
 use common\models\Account;
+use common\models\AccountType;
 
 use common\exceptions\AccountCreationErrorException;
 use dektrium\user\models\User as BaseUser;
@@ -20,11 +21,7 @@ class User extends BaseUser
 {
     public function getAccountTypes()
     {
-        $result = [];
-        foreach ($this->accounts as $account) {
-            $result[] = $account->accountType->name;
-        }
-        return $result;
+        return ArrayHelper::getColumn($this->accounts, 'name', $keepKeys = false);
     }
 
     public function checkDefaultAccounts(): bool
@@ -56,6 +53,7 @@ class User extends BaseUser
                 throw new AccountCreationErrorException($errors);
             }
         }
+        Yii::info('Default accounts has been created for ' . $this->id, 'wallet');
         $this->refresh();
     }
 
