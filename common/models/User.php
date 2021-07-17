@@ -21,7 +21,7 @@ class User extends BaseUser
 {
     public function getAccountTypes()
     {
-        return ArrayHelper::getColumn($this->accounts, 'name', $keepKeys = false);
+        return ArrayHelper::getColumn($this->accounts, 'name', false);
     }
 
     public function checkDefaultAccounts(): bool
