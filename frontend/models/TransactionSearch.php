@@ -3,10 +3,10 @@
 namespace frontend\models;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Transaction;
+use yii\helpers\ArrayHelper;
 
 /**
  * TransactionSearch represents the model behind the search form about `common\models\Transaction`.
@@ -39,11 +39,10 @@ class TransactionSearch extends Transaction
             'query' => $query,
         ]);
 
-        $dataProvider->sort->attributes['category_name'] =
-            [
-                'asc' => ['category.name' => SORT_ASC],
-                'desc' => ['category.name' => SORT_DESC],
-            ];
+        $dataProvider->sort->attributes['category_name'] = [
+            'asc' => ['category.name' => SORT_ASC],
+            'desc' => ['category.name' => SORT_DESC],
+        ];
 
         $user = Yii::$app->user->identity ?? null;
         $accountIds = [0];  // Do not show transactions if nobody is logged in

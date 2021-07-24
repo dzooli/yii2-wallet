@@ -37,7 +37,8 @@ class SiteController extends Controller
                     ],
                 ],
                 'denyCallback' => function ($rule, $action) {
-                    return $this->redirect(['user/login', 'redirectTo' => $action->controller->id . '/index']);
+                    return $this->redirect(['user/login',
+                                'redirectTo' => $action->controller->id . '/index']);
                 }
             ],
         ];
@@ -66,8 +67,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $transactionSearchModel = new TransactionSearch;
-        $transactionDataProvider = $transactionSearchModel->search(Yii::$app->request->getQueryParams());
+        $transactionSearchModel = new TransactionSearch();
+        $transactionDataProvider = $transactionSearchModel
+                ->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
                     'trSearchModel' => $transactionSearchModel,

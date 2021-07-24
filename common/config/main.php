@@ -1,15 +1,15 @@
 <?php
+
 $hostinfo = require 'params.php';
 return [
     'language' => 'en-US',
     'sourceLanguage' => 'en-US',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=db;dbname=yii2advanced',
@@ -17,7 +17,6 @@ return [
             'password' => 'password',
             'charset' => 'utf8',
         ],
-
         'formatter' => [
             'class' => 'yii\i18n\Formatter',
             'nullDisplay' => '-',
@@ -37,10 +36,10 @@ return [
             //'cacheTable' => '{{%cache}}',
             'class' => \yii\redis\Cache::class,
             'redis' => 'redis',
-            //'hostname' => 'redis',
-            //'port' => 6379,
-            //'database' => 0,
-            //]
+        //'hostname' => 'redis',
+        //'port' => 6379,
+        //'database' => 0,
+        //]
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -77,7 +76,7 @@ return [
                 ],
                 'cruds' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    //'basePath' => '@common/messages',
+                //'basePath' => '@common/messages',
                 ],
             ],
         ],
@@ -95,30 +94,29 @@ return [
             'mutex' => \yii\mutex\MysqlMutex::class, // Mutex used to sync queries
             'as log' => \yii\queue\LogBehavior::class,
             'as qeuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
-            // Other driver options
+        // Other driver options
         ],
         /*
-        'queue' => [
-            'class' => \yii\queue\file\Queue::class,
-            'as log' => \yii\queue\LogBehavior::class,
-            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
-        ],
-        */
-        /* 
-        'queue' => [
-            'class' => \yii\queue\redis\Queue::class,
-            'as log' => \yii\queue\LogBehavior::class,
-            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
-        ],
- */
-        /*         
-        'queue' => [
-            'class' => \yii\queue\sync\Queue::class,
-            'handle' => false, // whether tasks should be executed immediately
-        ],
+          'queue' => [
+          'class' => \yii\queue\file\Queue::class,
+          'as log' => \yii\queue\LogBehavior::class,
+          'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
+          ],
+         */
+        /*
+          'queue' => [
+          'class' => \yii\queue\redis\Queue::class,
+          'as log' => \yii\queue\LogBehavior::class,
+          'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class,
+          ],
+         */
+        /*
+          'queue' => [
+          'class' => \yii\queue\sync\Queue::class,
+          'handle' => false, // whether tasks should be executed immediately
+          ],
 
-*/
-
+         */
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
@@ -161,7 +159,7 @@ return [
                         }
                     },
                     'on ' . \dektrium\user\controllers\SecurityController::EVENT_AFTER_LOGIN => function ($e) {
-                        if (!Yii::$app->user->identity->checkDefaultAccounts()) {
+                        if (!Yii::$app->user->identity->hasDefaultAccounts()) {
                             try {
                                 Yii::$app->user->identity->createDefaultAccounts();
                             } catch (Exception $ex) {
@@ -173,7 +171,7 @@ return [
                         }
 
                         if (Yii::$app->session->has('redirectTo')) {
-                            $redirTo =  Yii::$app->session->get('redirectTo') ?? '';
+                            $redirTo = Yii::$app->session->get('redirectTo') ?? '';
                             Yii::$app->session->remove('redirectTo');
                             Yii::$app->response->redirect([$redirTo])->send();
                         }

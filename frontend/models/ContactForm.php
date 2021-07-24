@@ -1,5 +1,9 @@
 <?php
 
+use common\models\EmailForm;
+use himiklab\yii2\recaptcha\ReCaptchaValidator;
+use yii\base\Model;
+
 /**
  * Copyright (c) 2018
  * cms Smetana
@@ -8,12 +12,6 @@
  */
 
 namespace frontend\models;
-
-use common\models\EmailForm;
-use himiklab\yii2\recaptcha\ReCaptchaValidator;
-
-use Yii;
-use yii\base\Model;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -24,11 +22,9 @@ class ContactForm extends Model
     public $phone;
     public $message;
     public $verifyCode;
-
     public $name = 'Your name here';
     public $subject = 'Info request';
     public $body = 'Hello,';
-
 
     /**
      * @inheritdoc
@@ -45,7 +41,6 @@ class ContactForm extends Model
             [['message'], 'string', 'min' => 5, 'on' => 'callback'],
             ['phone', 'string', 'min' => 10],
             [['verifyCode'], ReCaptchaValidator::class]
-
         ];
     }
 
@@ -82,11 +77,12 @@ class ContactForm extends Model
     {
         $contact_form = new EmailForm();
 
-        if (isset(Yii::$app->user) && !Yii::$app->user->isGuest)
+        if (isset(Yii::$app->user) && !Yii::$app->user->isGuest) {
             $contact_form->user_id = Yii::$app->user->id;
+        }
 
         $this->message = $this->message . '
-        
+
         Email: ' . $this->email . '
         ' . Yii::t('app-model', 'Phone') . ': ' . $this->phone;
 
@@ -99,13 +95,12 @@ class ContactForm extends Model
         $contact_form->save();
 
         $result = Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([Yii::$app->params['supportEmail'] => 'С контактов'])
-            ->setSubject(Yii::$app->name)
-            ->setTextBody($this->message)
-            ->send();
+                ->setTo($email)
+                ->setFrom([Yii::$app->params['supportEmail'] => 'С контактов'])
+                ->setSubject(Yii::$app->name)
+                ->setTextBody($this->message)
+                ->send();
         //$result =  mail ( Yii::$app->params['adminEmail'], 'Заявка с сайта', $this->message);
-
         //$this->sendViber($this->message);
 
         $contact_form->status = $result;
@@ -125,44 +120,44 @@ class ContactForm extends Model
      * @param $message
      * @return bool
      *
-    public function sendViber($message) {
-        $settings = Yii::$app->settings;
-        $apiKey = $settings->get('ViberForm', 'apiKey');
-        $finance_list = explode(';',$settings->get('ViberForm', 'finance'));
+      public function sendViber($message) {
+      $settings = Yii::$app->settings;
+      $apiKey = $settings->get('ViberForm', 'apiKey');
+      $finance_list = explode(';',$settings->get('ViberForm', 'finance'));
 
-        if(!$apiKey || !count($finance_list))
-            return false;
+      if(!$apiKey || !count($finance_list))
+      return false;
 
-        $botSender = new Sender([
-            'name' => $settings->get('ViberForm', 'botName'),
-            'avatar' => 'https://developers.viber.com/img/favicon.ico',
-        ]);
+      $botSender = new Sender([
+      'name' => $settings->get('ViberForm', 'botName'),
+      'avatar' => 'https://developers.viber.com/img/favicon.ico',
+      ]);
 
-        $bot = null;
-        try {
-            // create bot instance
-            $bot = new Bot(['token' => $apiKey]);
+      $bot = null;
+      try {
+      // create bot instance
+      $bot = new Bot(['token' => $apiKey]);
 
-            for($i=0; $i<count($finance_list); $i++) {
-                $user_id= $finance_list[$i];
+      for($i=0; $i<count($finance_list); $i++) {
+      $user_id= $finance_list[$i];
 
-                $bot->getClient()->sendMessage(
-                    (new \Viber\Api\Message\Text())
-                        ->setSender($botSender)
-                        ->setReceiver($user_id)
-                        ->setText($message)
-                );
-            }
+      $bot->getClient()->sendMessage(
+      (new \Viber\Api\Message\Text())
+      ->setSender($botSender)
+      ->setReceiver($user_id)
+      ->setText($message)
+      );
+      }
 
-            return true;
+      return true;
 
-        } catch (\Exception $e) {
-            Yii::warning('Exception: '. $e->getMessage());
-            if ($bot) {
-                //Yii::warning('Actual sign: ' . $bot->getSignHeaderValue());
-                //Yii::warning('Actual body: ' . $bot->getInputBody());
-            }
-            return false;
-        }
-    }*/
+      } catch (\Exception $e) {
+      Yii::warning('Exception: '. $e->getMessage());
+      if ($bot) {
+      //Yii::warning('Actual sign: ' . $bot->getSignHeaderValue());
+      //Yii::warning('Actual body: ' . $bot->getInputBody());
+      }
+      return false;
+      }
+      } */
 }

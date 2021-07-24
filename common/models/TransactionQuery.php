@@ -2,18 +2,21 @@
 
 namespace common\models;
 
+use yii\db\ActiveQuery;
+use common\models\Transaction;
+
 /**
  * This is the ActiveQuery class for [[Transaction]].
  *
  * @see Transaction
  */
-class TransactionQuery extends \yii\db\ActiveQuery
+class TransactionQuery extends ActiveQuery
 {
-    /*public function active()
-    {
-        $this->andWhere('[[status]]=1');
-        return $this;
-    }*/
+    /* public function active()
+      {
+      $this->andWhere('[[status]]=1');
+      return $this;
+      } */
 
     /**
      * @inheritdoc

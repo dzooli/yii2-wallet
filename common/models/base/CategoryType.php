@@ -5,28 +5,28 @@
 
 namespace common\models\base;
 
-use common\models\Account;
-use common\models\AccountTypeQuery;
+use common\models\Category;
+use common\models\CategoryTypeQuery;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 /**
- * This is the base-model class for table "account_type".
+ * This is the base-model class for table "category_type".
  *
  * @property integer $id
  * @property string $name
  *
- * @property Account[] $accounts
+ * @property Category[] $categories
  * @property string $aliasModel
  */
-abstract class AccountType extends ActiveRecord
+abstract class CategoryType extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'account_type';
+        return 'category_type';
     }
 
     /**
@@ -54,17 +54,17 @@ abstract class AccountType extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getAccounts()
+    public function getCategories()
     {
-        return $this->hasMany(Account::class, ['account_type_id' => 'id']);
+        return $this->hasMany(Category::class, ['category_type_id' => 'id']);
     }
 
     /**
      * @inheritdoc
-     * @return AccountTypeQuery the active query used by this AR class.
+     * @return CategoryTypeQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new AccountTypeQuery(get_called_class());
+        return new CategoryTypeQuery(get_called_class());
     }
 }

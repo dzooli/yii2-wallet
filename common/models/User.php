@@ -25,7 +25,7 @@ class User extends BaseUser
      */
     public function getAccountTypes()
     {
-        return ArrayHelper::getColumn($this->accounts, 'name', false);
+        return ArrayHelper::getColumn($this->accounts, 'account_type_id', false);
     }
 
     /**
@@ -33,10 +33,12 @@ class User extends BaseUser
      *
      * @return boolean
      */
-    public function checkDefaultAccounts(): bool
+    public function hasDefaultAccounts(): bool
     {
         $accTypes = $this->getAccountTypes();
-        return in_array('Outside', $accTypes) && in_array('Cash', $accTypes) && in_array('Credit', $accTypes);
+        return in_array(AccountType::TYPE_CREDIT, $accTypes) &&
+                in_array(AccountType::TYPE_CASH, $accTypes) &&
+                in_array(AccountType::TYPE_OUTSIDE, $accTypes);
     }
 
     /**

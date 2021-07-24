@@ -2,8 +2,7 @@
 
 namespace common\models;
 
-use Yii;
-use \common\models\base\Account as BaseAccount;
+use common\models\base\Account as BaseAccount;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -11,14 +10,13 @@ use yii\helpers\ArrayHelper;
  */
 class Account extends BaseAccount
 {
-
     public function behaviors()
     {
         return ArrayHelper::merge(
             parent::behaviors(),
             [
-                # custom behaviors
-            ]
+                        # custom behaviors
+                        ]
         );
     }
 
@@ -27,8 +25,8 @@ class Account extends BaseAccount
         return ArrayHelper::merge(
             parent::rules(),
             [
-                # custom validation rules
-            ]
+                        # custom validation rules
+                        ]
         );
     }
 }

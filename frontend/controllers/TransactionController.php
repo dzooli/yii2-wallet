@@ -3,14 +3,12 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\Transaction;
 use frontend\models\TransactionSearch;
-
+use common\models\Transaction;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use yii\filters\HttpCache;
 
 /**
  * TransactionController implements the CRUD actions for Transaction model.
@@ -59,12 +57,12 @@ class TransactionController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new TransactionSearch;
+        $searchModel = new TransactionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
-            'trDataProvider' => $dataProvider,
-            'trSearchModel' => $searchModel,
+                    'trDataProvider' => $dataProvider,
+                    'trSearchModel' => $searchModel,
         ]);
     }
 
@@ -91,14 +89,14 @@ class TransactionController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Transaction;
+        $model = new Transaction();
         $model->created_at = strftime('%Y-%m-%d');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -117,7 +115,7 @@ class TransactionController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }

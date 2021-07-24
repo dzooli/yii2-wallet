@@ -5,28 +5,28 @@
 
 namespace common\models\base;
 
-use common\models\Account;
-use common\models\AccountTypeQuery;
+use common\models\Icon;
+use common\models\IconImageQuery;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 /**
- * This is the base-model class for table "account_type".
+ * This is the base-model class for table "icon_image".
  *
  * @property integer $id
  * @property string $name
  *
- * @property Account[] $accounts
+ * @property Icon[] $icons
  * @property string $aliasModel
  */
-abstract class AccountType extends ActiveRecord
+abstract class IconImage extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'account_type';
+        return 'icon_image';
     }
 
     /**
@@ -54,17 +54,17 @@ abstract class AccountType extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getAccounts()
+    public function getIcons()
     {
-        return $this->hasMany(Account::class, ['account_type_id' => 'id']);
+        return $this->hasMany(Icon::class, ['icon_image_id' => 'id']);
     }
 
     /**
      * @inheritdoc
-     * @return AccountTypeQuery the active query used by this AR class.
+     * @return IconImageQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new AccountTypeQuery(get_called_class());
+        return new IconImageQuery(get_called_class());
     }
 }
