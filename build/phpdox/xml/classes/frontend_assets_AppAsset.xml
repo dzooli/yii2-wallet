@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="frontend\assets\AppAsset" namespace="frontend\assets" name="AppAsset" abstract="false" final="false" start="11" end="25">
+  <file path="D:/projects/php/yii2/wallet-yii2/frontend/assets" file="AppAsset.php" realpath="D:/projects/php/yii2/wallet-yii2/frontend/assets/AppAsset.php" size="513" time="2021-03-13T11:40:32+00:00" unixtime="1615635632" sha1="de520c200083f9ee79454f9bb043c046cfdd178b" relative="assets/AppAsset.php"/>
+  <docblock>
+    <description compact="Main frontend application asset bundle."/>
+  </docblock>
+  <extends full="yii\web\AssetBundle" namespace="yii\web" name="AssetBundle" unresolved="true"/>
+  <member name="basePath" default="'@webroot'" type="string" visibility="public" static="false" line="13"/>
+  <member name="baseUrl" default="'@web'" type="string" visibility="public" static="false" line="14"/>
+  <member name="css" default="" type="array" visibility="public" static="false" line="15"/>
+  <member name="js" default="" type="array" visibility="public" static="false" line="18"/>
+  <member name="depends" default="" type="array" visibility="public" static="false" line="19"/>
+</class>

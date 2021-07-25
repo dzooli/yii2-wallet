@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\widgets\Alert" namespace="common\widgets" name="Alert" abstract="false" final="false" start="26" end="76">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/widgets" file="Alert.php" realpath="D:/projects/php/yii2/wallet-yii2/common/widgets/Alert.php" size="2326" time="2021-03-12T14:28:42+00:00" unixtime="1615559322" sha1="ca748521d5e36afb16bae5418752504ab5ed25ba" relative="widgets/Alert.php"/>
+  <docblock>
+    <description compact="Alert widget renders a message from session flash. All flash messages are displayed in the sequence they were assigned using setFlash. You can set message as following:">```php
+Yii::$app-&gt;session-&gt;setFlash('error', 'This is the message');
+Yii::$app-&gt;session-&gt;setFlash('success', 'This is the message');
+Yii::$app-&gt;session-&gt;setFlash('info', 'This is the message');
+```
+
+Multiple messages could be set as follows:
+
+```php
+Yii::$app-&gt;session-&gt;setFlash('error', ['Error 1', 'Error 2']);
+```</description>
+    <author value="Kartik Visweswaran &lt;kartikv2@gmail.com&gt;"/>
+    <author value="Alexander Makarov &lt;sam@rmcreative.ru&gt;"/>
+  </docblock>
+  <extends full="yii\bootstrap4\Widget" namespace="yii\bootstrap4" name="Widget" unresolved="true"/>
+  <member name="alertTypes" default="" type="array" visibility="public" static="false" line="34">
+    <docblock>
+      <description/>
+      <var description="the alert types configuration for the flash messages." type="array">This array is setup as $key =&gt; $value, where:
+- key: the name of the session flash variable
+- value: the bootstrap alert type (i.e. danger, success, info, warning)</var>
+    </docblock>
+  </member>
+  <member name="closeButton" default="" type="array" visibility="public" static="false" line="45">
+    <docblock>
+      <description/>
+      <var description="the options for rendering the close button tag." type="array">Array will be passed to [[\yii\bootstrap\Alert::closeButton]].</var>
+    </docblock>
+  </member>
+  <method name="run" start="51" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+</class>

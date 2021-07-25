@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="frontend\controllers\TransactionController" namespace="frontend\controllers" name="TransactionController" abstract="false" final="false" start="16" end="151">
+  <file path="D:/projects/php/yii2/wallet-yii2/frontend/controllers" file="TransactionController.php" realpath="D:/projects/php/yii2/wallet-yii2/frontend/controllers/TransactionController.php" size="4496" time="2021-07-24T13:05:28+00:00" unixtime="1627131928" sha1="8c66ac760e120127f6c1888bb741bb9f26b823bd" relative="controllers/TransactionController.php"/>
+  <docblock>
+    <description compact="TransactionController implements the CRUD actions for Transaction model."/>
+  </docblock>
+  <extends full="yii\web\Controller" namespace="yii\web" name="Controller" unresolved="true"/>
+  <method name="behaviors" start="18" end="52" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="actionIndex" start="58" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Lists all Transaction models."/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="actionView" start="74" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Displays a single Transaction model."/>
+      <param type="integer" variable="$id"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="actionCreate" start="90" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a new Transaction model.">If creation is successful, the browser will be redirected to the 'view' page.</description>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="actionUpdate" start="110" end="121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates an existing Transaction model.">If update is successful, the browser will be redirected to the 'view' page.</description>
+      <param type="integer" variable="$id"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="actionDelete" start="129" end="134" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes an existing Transaction model.">If deletion is successful, the browser will be redirected to the 'index' page.</description>
+      <param type="integer" variable="$id"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="findModel" start="143" end="150" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Finds the Transaction model based on its primary key value.">If the model is not found, a 404 HTTP exception will be thrown.</description>
+      <param type="integer" variable="$id"/>
+      <return description="the loaded model" type="object">
+        <type full="common\models\Transaction" namespace="common\models" name="Transaction"/>
+      </return>
+      <throws description="if the model cannot be found" type="object">
+        <type full="yii\web\NotFoundHttpException" namespace="yii\web" name="NotFoundHttpException"/>
+      </throws>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

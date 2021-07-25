@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\Color" namespace="common\models" name="Color" abstract="false" final="false" start="12" end="34">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="Color.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/Color.php" size="577" time="2021-03-16T14:17:00+00:00" unixtime="1615904220" sha1="2ae886126926f9ade3e80af711f8d89e74fe45b8" relative="models/Color.php"/>
+  <docblock>
+    <description compact="This is the model class for table &quot;color&quot;."/>
+  </docblock>
+  <extends full="common\models\base\Color" namespace="common\models\base" name="Color"/>
+  <method name="behaviors" start="15" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="rules" start="25" end="33" abstract="false" final="false" static="false" visibility="public"/>
+  <parent full="common\models\base\Color" namespace="common\models\base" name="Color">
+    <extends full="yii\db\ActiveRecord" namespace="yii\db" name="ActiveRecord" unresolved="true"/>
+    <method name="tableName" start="30" end="33" abstract="false" final="false" static="true" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="rules" start="38" end="45" abstract="false" final="false" static="false" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="attributeLabels" start="50" end="57" abstract="false" final="false" static="false" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="attributeHints" start="62" end="67" abstract="false" final="false" static="false" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="getAccounts" start="72" end="75" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="object">
+          <type full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getCategories" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="object">
+          <type full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="find" start="89" end="92" abstract="false" final="false" static="true" visibility="public">
+      <docblock inherit="true">
+        <description/>
+        <return description="the active query used by this AR class." type="object">
+          <type full="common\models\ColorQuery" namespace="common\models" name="ColorQuery"/>
+        </return>
+      </docblock>
+    </method>
+  </parent>
+</class>

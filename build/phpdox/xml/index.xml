@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="D:/projects/php/yii2/wallet-yii2/common">
+  <namespace name="common\exceptions">
+    <class name="AccountCreationErrorException" src="exceptions/AccountCreationErrorException.php" xml="classes/common_exceptions_AccountCreationErrorException.xml"/>
+  </namespace>
+  <namespace name="common\fixtures">
+    <class name="UserFixture" src="fixtures/UserFixture.php" xml="classes/common_fixtures_UserFixture.xml"/>
+  </namespace>
+  <namespace name="common\models">
+    <class name="Account" src="models/Account.php" description="This is the model class for table &quot;account&quot;." xml="classes/common_models_Account.xml"/>
+    <class name="AccountQuery" src="models/AccountQuery.php" description="This is the ActiveQuery class for [[Account]]." xml="classes/common_models_AccountQuery.xml"/>
+    <class name="AccountType" src="models/AccountType.php" description="This is the model class for table &quot;account_type&quot;." xml="classes/common_models_AccountType.xml"/>
+    <class name="AccountTypeQuery" src="models/AccountTypeQuery.php" description="This is the ActiveQuery class for [[AccountType]]." xml="classes/common_models_AccountTypeQuery.xml"/>
+    <class name="Category" src="models/Category.php" description="This is the model class for table &quot;category&quot;." xml="classes/common_models_Category.xml"/>
+    <class name="CategoryType" src="models/CategoryType.php" description="This is the model class for table &quot;category_type&quot;." xml="classes/common_models_CategoryType.xml"/>
+    <class name="CategoryTypeQuery" src="models/CategoryTypeQuery.php" description="This is the ActiveQuery class for [[CategoryType]]." xml="classes/common_models_CategoryTypeQuery.xml"/>
+    <class name="Color" src="models/Color.php" description="This is the model class for table &quot;color&quot;." xml="classes/common_models_Color.xml"/>
+    <class name="ColorQuery" src="models/ColorQuery.php" description="This is the ActiveQuery class for [[Color]]." xml="classes/common_models_ColorQuery.xml"/>
+    <class name="Currency" src="models/Currency.php" description="This is the model class for table &quot;currency&quot;." xml="classes/common_models_Currency.xml"/>
+    <class name="CurrencyQuery" src="models/CurrencyQuery.php" description="This is the ActiveQuery class for [[Currency]]." xml="classes/common_models_CurrencyQuery.xml"/>
+    <class name="EmailForm" src="models/EmailForm.php" description="This is the model class for table &quot;contact_form&quot;." xml="classes/common_models_EmailForm.xml"/>
+    <class name="Icon" src="models/Icon.php" description="This is the model class for table &quot;icon&quot;." xml="classes/common_models_Icon.xml"/>
+    <class name="IconImage" src="models/IconImage.php" description="This is the model class for table &quot;icon_image&quot;." xml="classes/common_models_IconImage.xml"/>
+    <class name="IconImageQuery" src="models/IconImageQuery.php" description="This is the ActiveQuery class for [[IconImage]]." xml="classes/common_models_IconImageQuery.xml"/>
+    <class name="IconQuery" src="models/IconQuery.php" description="This is the ActiveQuery class for [[Icon]]." xml="classes/common_models_IconQuery.xml"/>
+    <class name="IconType" src="models/IconType.php" description="This is the model class for table &quot;icon_type&quot;." xml="classes/common_models_IconType.xml"/>
+    <class name="IconTypeQuery" src="models/IconTypeQuery.php" description="This is the ActiveQuery class for [[IconType]]." xml="classes/common_models_IconTypeQuery.xml"/>
+    <class name="Transaction" src="models/Transaction.php" description="This is the model class for table &quot;transaction&quot;." xml="classes/common_models_Transaction.xml"/>
+    <class name="TransactionQuery" src="models/TransactionQuery.php" description="This is the ActiveQuery class for [[Transaction]]." xml="classes/common_models_TransactionQuery.xml"/>
+    <class name="User" src="models/User.php" description="Class User" xml="classes/common_models_User.xml"/>
+  </namespace>
+  <namespace name="common\models\base">
+    <class name="Account" src="models/base/Account.php" description="This is the base-model class for table &quot;account&quot;." xml="classes/common_models_base_Account.xml"/>
+    <class name="AccountType" src="models/base/AccountType.php" description="This is the base-model class for table &quot;account_type&quot;." xml="classes/common_models_base_AccountType.xml"/>
+    <class name="Category" src="models/base/Category.php" description="This is the base-model class for table &quot;category&quot;." xml="classes/common_models_base_Category.xml"/>
+    <class name="CategoryType" src="models/base/CategoryType.php" description="This is the base-model class for table &quot;category_type&quot;." xml="classes/common_models_base_CategoryType.xml"/>
+    <class name="Color" src="models/base/Color.php" description="This is the base-model class for table &quot;color&quot;." xml="classes/common_models_base_Color.xml"/>
+    <class name="Currency" src="models/base/Currency.php" description="This is the base-model class for table &quot;currency&quot;." xml="classes/common_models_base_Currency.xml"/>
+    <class name="Icon" src="models/base/Icon.php" description="This is the base-model class for table &quot;icon&quot;." xml="classes/common_models_base_Icon.xml"/>
+    <class name="IconImage" src="models/base/IconImage.php" description="This is the base-model class for table &quot;icon_image&quot;." xml="classes/common_models_base_IconImage.xml"/>
+    <class name="IconType" src="models/base/IconType.php" description="This is the base-model class for table &quot;icon_type&quot;." xml="classes/common_models_base_IconType.xml"/>
+    <class name="Transaction" src="models/base/Transaction.php" description="This is the base-model class for table &quot;transaction&quot;." xml="classes/common_models_base_Transaction.xml"/>
+  </namespace>
+  <namespace name="common\widgets">
+    <class name="Alert" src="widgets/Alert.php" description="Alert widget renders a message from session flash. All flash messages are displayed in the sequence they were assigned using setFlash. You can set message as following:" xml="classes/common_widgets_Alert.xml"/>
+  </namespace>
+  <namespace name="">
+    <class name="Exception" xml="classes/Exception.xml"/>
+  </namespace>
+<namespace name="frontend\assets"><class name="AppAsset" src="assets/AppAsset.php" description="Main frontend application asset bundle." xml="classes/frontend_assets_AppAsset.xml"/></namespace><namespace name="frontend\controllers"><class name="SiteController" src="controllers/SiteController.php" description="Site controller" xml="classes/frontend_controllers_SiteController.xml"/><class name="TransactionController" src="controllers/TransactionController.php" description="TransactionController implements the CRUD actions for Transaction model." xml="classes/frontend_controllers_TransactionController.xml"/></namespace><namespace name="frontend\models"><class name="TransactionSearch" src="models/TransactionSearch.php" description="TransactionSearch represents the model behind the search form about `common\models\Transaction`." xml="classes/frontend_models_TransactionSearch.xml"/></namespace></index>

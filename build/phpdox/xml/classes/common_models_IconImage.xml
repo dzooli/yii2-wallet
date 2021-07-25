@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\IconImage" namespace="common\models" name="IconImage" abstract="false" final="false" start="12" end="34">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="IconImage.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/IconImage.php" size="598" time="2021-07-24T12:24:06+00:00" unixtime="1627129446" sha1="7555a6b272c2f73102b3676af9452943dc068f7c" relative="models/IconImage.php"/>
+  <docblock>
+    <description compact="This is the model class for table &quot;icon_image&quot;."/>
+  </docblock>
+  <extends full="common\models\base\IconImage" namespace="common\models\base" name="IconImage"/>
+  <method name="behaviors" start="15" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="rules" start="25" end="33" abstract="false" final="false" static="false" visibility="public"/>
+  <parent full="common\models\base\IconImage" namespace="common\models\base" name="IconImage">
+    <extends full="yii\db\ActiveRecord" namespace="yii\db" name="ActiveRecord" unresolved="true"/>
+    <method name="tableName" start="27" end="30" abstract="false" final="false" static="true" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="rules" start="35" end="41" abstract="false" final="false" static="false" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="attributeLabels" start="46" end="52" abstract="false" final="false" static="false" visibility="public">
+      <docblock inherit="true">
+        <description/>
+      </docblock>
+    </method>
+    <method name="getIcons" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="object">
+          <type full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="find" start="66" end="69" abstract="false" final="false" static="true" visibility="public">
+      <docblock inherit="true">
+        <description/>
+        <return description="the active query used by this AR class." type="object">
+          <type full="common\models\IconImageQuery" namespace="common\models" name="IconImageQuery"/>
+        </return>
+      </docblock>
+    </method>
+  </parent>
+</class>

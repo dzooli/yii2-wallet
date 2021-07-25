@@ -10,18 +10,22 @@ use common\exceptions\AccountCreationErrorException;
 use dektrium\user\models\User as BaseUser;
 
 /**
- * Class User
+ * The user class is derived from dektrium\user\models\User
+ *
+ * Used for easy user registration and login handling with enhanced security,
+ * password reset functionality and remember password generation and confirmation
+ * of the registration.
+ *
  * @package common\models
  *
  * @property common\models\Account $accounts
  */
 class User extends BaseUser
 {
-
     /**
-     * Retrieves the existing account names
+     * Retrieves the existing account types
      *
-     * @return array The user's existing account names
+     * @return array The user's existing account types
      */
     public function getAccountTypes()
     {
@@ -29,7 +33,7 @@ class User extends BaseUser
     }
 
     /**
-     * Checks the default accounts existence (cash and outside is required for everybody)
+     * Checks the default accounts existence (cash, credit and outside is required for everybody)
      *
      * @return boolean
      */

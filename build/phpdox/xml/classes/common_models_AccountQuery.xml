@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\AccountQuery" namespace="common\models" name="AccountQuery" abstract="false" final="false" start="10" end="35">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="AccountQuery.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/AccountQuery.php" size="568" time="2021-03-16T14:13:56+00:00" unixtime="1615904036" sha1="0addf4dcdf9c81941476d179de15312cc2aa9754" relative="models/AccountQuery.php"/>
+  <docblock>
+    <description compact="This is the ActiveQuery class for [[Account]]."/>
+    <see value="Account"/>
+  </docblock>
+  <extends full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery" unresolved="true"/>
+  <method name="all" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="array" of="object">
+        <type full="common\models\Account[]|arr" namespace="common\models" name="Account[]|arr"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="one" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="object">
+        <type full="common\models\Account|array|null" namespace="common\models" name="Account|array|null"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

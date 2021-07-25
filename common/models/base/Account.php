@@ -41,6 +41,10 @@ abstract class Account extends ActiveRecord
     public $provider;
 
     /**
+     * Returns the table name
+     *
+     * @return string The table name in the database
+     *
      * @inheritdoc
      */
     public static function tableName()

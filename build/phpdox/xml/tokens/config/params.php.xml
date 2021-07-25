@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="D:/projects/php/yii2/wallet-yii2/frontend/config" file="params.php" realpath="D:/projects/php/yii2/wallet-yii2/frontend/config/params.php" size="19" time="2021-03-10T10:53:59+00:00" unixtime="1615373639" sha1="309b88fe03e29c1c5941f64f61c4c45d157cc282" relative="config/params.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+  </line>
+  <line no="3"/>
+  <line no="4">
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="5"/>
+</source>

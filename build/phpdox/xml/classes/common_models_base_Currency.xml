@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\base\Currency" namespace="common\models\base" name="Currency" abstract="true" final="false" start="25" end="83">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models/base" file="Currency.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/base/Currency.php" size="1749" time="2021-07-24T13:02:57+00:00" unixtime="1627131777" sha1="22a421c4c237c1f12a8cffc25f6b567409ae000a" relative="models/base/Currency.php"/>
+  <docblock>
+    <description compact="This is the base-model class for table &quot;currency&quot;."/>
+    <property value="integer $id"/>
+    <property value="string $abbreviation"/>
+    <property value="string $name"/>
+    <property value="Account[] $accounts"/>
+    <property value="Transaction[] $transactions"/>
+    <property value="string $aliasModel"/>
+  </docblock>
+  <extends full="yii\db\ActiveRecord" namespace="yii\db" name="ActiveRecord" unresolved="true"/>
+  <method name="tableName" start="30" end="33" abstract="false" final="false" static="true" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+  </method>
+  <method name="rules" start="38" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+  </method>
+  <method name="attributeLabels" start="50" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+  </method>
+  <method name="getAccounts" start="62" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getTransactions" start="70" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="find" start="79" end="82" abstract="false" final="false" static="true" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return description="the active query used by this AR class." type="object">
+        <type full="common\models\CurrencyQuery" namespace="common\models" name="CurrencyQuery"/>
+      </return>
+    </docblock>
+  </method>
+  <extenders>
+    <extender full="common\models\Currency" namespace="common\models" name="Currency"/>
+  </extenders>
+</class>

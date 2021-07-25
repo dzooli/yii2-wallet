@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="frontend\controllers\SiteController" namespace="frontend\controllers" name="SiteController" abstract="false" final="false" start="14" end="115">
+  <file path="D:/projects/php/yii2/wallet-yii2/frontend/controllers" file="SiteController.php" realpath="D:/projects/php/yii2/wallet-yii2/frontend/controllers/SiteController.php" size="3088" time="2021-07-24T13:09:41+00:00" unixtime="1627132181" sha1="aea4655463b4353990225460f5c4caf29f089dfc" relative="controllers/SiteController.php"/>
+  <docblock>
+    <description compact="Site controller"/>
+  </docblock>
+  <extends full="yii\web\Controller" namespace="yii\web" name="Controller" unresolved="true"/>
+  <method name="behaviors" start="16" end="45" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="actions" start="50" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="actionIndex" start="68" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Displays homepage."/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="actionContact" start="85" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Displays contact page."/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="actionAbout" start="111" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Displays about page."/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+</class>

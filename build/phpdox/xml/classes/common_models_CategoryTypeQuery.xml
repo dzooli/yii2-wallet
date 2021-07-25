@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\CategoryTypeQuery" namespace="common\models" name="CategoryTypeQuery" abstract="false" final="false" start="10" end="35">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="CategoryTypeQuery.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/CategoryTypeQuery.php" size="593" time="2021-07-24T12:10:30+00:00" unixtime="1627128630" sha1="2f895ae92541ca8e9eacb3806407f7372ca115c5" relative="models/CategoryTypeQuery.php"/>
+  <docblock>
+    <description compact="This is the ActiveQuery class for [[CategoryType]]."/>
+    <see value="CategoryType"/>
+  </docblock>
+  <extends full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery" unresolved="true"/>
+  <method name="all" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="array" of="object">
+        <type full="common\models\CategoryType[]|arr" namespace="common\models" name="CategoryType[]|arr"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="one" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="object">
+        <type full="common\models\CategoryType|array|null" namespace="common\models" name="CategoryType|array|null"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

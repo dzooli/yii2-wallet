@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\TransactionQuery" namespace="common\models" name="TransactionQuery" abstract="false" final="false" start="13" end="38">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="TransactionQuery.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/TransactionQuery.php" size="638" time="2021-07-24T12:54:34+00:00" unixtime="1627131274" sha1="088a320937860da9dda04089d5e322bafdcabb16" relative="models/TransactionQuery.php"/>
+  <docblock>
+    <description compact="This is the ActiveQuery class for [[Transaction]]."/>
+    <see value="Transaction"/>
+  </docblock>
+  <extends full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery" unresolved="true"/>
+  <method name="all" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="array" of="object">
+        <type full="common\models\Transaction[]|arr" namespace="common\models" name="Transaction[]|arr"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="one" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="object">
+        <type full="common\models\Transaction|array|null" namespace="common\models" name="Transaction|array|null"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

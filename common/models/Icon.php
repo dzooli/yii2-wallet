@@ -3,7 +3,7 @@
 namespace common\models;
 
 use Yii;
-use \common\models\base\Icon as BaseIcon;
+use common\models\base\Icon as BaseIcon;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -11,14 +11,13 @@ use yii\helpers\ArrayHelper;
  */
 class Icon extends BaseIcon
 {
-
     public function behaviors()
     {
         return ArrayHelper::merge(
             parent::behaviors(),
             [
-                # custom behaviors
-            ]
+                        // custom behaviors
+                        ]
         );
     }
 
@@ -27,8 +26,8 @@ class Icon extends BaseIcon
         return ArrayHelper::merge(
             parent::rules(),
             [
-                # custom validation rules
-            ]
+                        // custom validation rules
+                        ]
         );
     }
 }

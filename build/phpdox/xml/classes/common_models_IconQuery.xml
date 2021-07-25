@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="common\models\IconQuery" namespace="common\models" name="IconQuery" abstract="false" final="false" start="10" end="35">
+  <file path="D:/projects/php/yii2/wallet-yii2/common/models" file="IconQuery.php" realpath="D:/projects/php/yii2/wallet-yii2/common/models/IconQuery.php" size="553" time="2021-03-16T14:18:33+00:00" unixtime="1615904313" sha1="fc6c0914aa36ff42d803e03c4f03004c88420ffa" relative="models/IconQuery.php"/>
+  <docblock>
+    <description compact="This is the ActiveQuery class for [[Icon]]."/>
+    <see value="Icon"/>
+  </docblock>
+  <extends full="yii\db\ActiveQuery" namespace="yii\db" name="ActiveQuery" unresolved="true"/>
+  <method name="all" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="array" of="object">
+        <type full="common\models\Icon[]|arr" namespace="common\models" name="Icon[]|arr"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="one" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+      <return type="object">
+        <type full="common\models\Icon|array|null" namespace="common\models" name="Icon|array|null"/>
+      </return>
+    </docblock>
+    <parameter name="db" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>
