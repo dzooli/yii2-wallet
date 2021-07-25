@@ -49,4 +49,5 @@ phpunit.phar
 redis/dump.rdb
 /docs
 .phpdoc/
+build/
 
