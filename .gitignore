@@ -48,6 +48,6 @@ phpunit.phar
 .env
 redis/dump.rdb
 /docs
-.phpdoc/
+
 build/
 
