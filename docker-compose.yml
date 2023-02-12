@@ -1,7 +1,6 @@
 version: "3"
 services:
   web:
-    restart: always
     build:
       dockerfile: Dockerfile
       context: "nginx"
@@ -15,7 +14,6 @@ services:
     links:
       - php
   php:
-    restart: always
     build:
       dockerfile: Dockerfile-${DOCKERFILE_FLAVOUR}
       context: "php"
@@ -35,7 +33,6 @@ services:
       - db
       - redis
   db:
-    restart: always
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -49,7 +46,6 @@ services:
       - "3306:3306"
   #      - "8106:3306"
   redis:
-    restart: always
     image: redis:latest
     volumes:
       - ./redis:/data
